@@ -10,8 +10,8 @@ partial struct SetupUnitMoverDefaultPositionSystem : ISystem
     {
         EntityCommandBuffer entityCommandBuffer = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
 
-        foreach((RefRW<LocalTransform> localTransform,RefRW<UnitMover> unitMover,RefRW<SetupUnitMoverDefaultPosition> SetupUnitMoverDefaultPosition,Entity entity) in
-            SystemAPI.Query<RefRW<LocalTransform>,RefRW<UnitMover>,RefRW<SetupUnitMoverDefaultPosition>>().WithEntityAccess())
+        foreach ((RefRW<LocalTransform> localTransform, RefRW<UnitMover> unitMover, RefRW<SetupUnitMoverDefaultPosition> SetupUnitMoverDefaultPosition, Entity entity) in
+            SystemAPI.Query<RefRW<LocalTransform>, RefRW<UnitMover>, RefRW<SetupUnitMoverDefaultPosition>>().WithEntityAccess())
         {
             unitMover.ValueRW.targetPosition = localTransform.ValueRO.Position;
 
