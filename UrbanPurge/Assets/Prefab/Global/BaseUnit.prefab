@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 1497633079684370524}
   - component: {fileID: 1451242130220006396}
   - component: {fileID: 1696678519438427714}
+  - component: {fileID: 6040622174078643495}
   - component: {fileID: 5460848199982387679}
   - component: {fileID: 399196804943373892}
   m_Layer: 0
@@ -151,6 +152,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitMoverAuthoring
   movemenSpeed: 5
   rotationtSpeed: 7
+--- !u!114 &6040622174078643495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af888685f6e71774ca87819608f83468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveOverrideAuthoring
 --- !u!136 &5460848199982387679
 CapsuleCollider:
   m_ObjectHideFlags: 0
