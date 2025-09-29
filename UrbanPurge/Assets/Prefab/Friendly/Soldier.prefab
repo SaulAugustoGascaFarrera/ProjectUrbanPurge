@@ -89,6 +89,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8612522667717254923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6531485677171320828}
+  m_Layer: 0
+  m_Name: SpawnBulletPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6531485677171320828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612522667717254923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.274, y: 1.926, z: 1.999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6039823455947821284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5123242836298399928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,6 +172,14 @@ PrefabInstance:
       propertyPath: movemenSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1931400178743571239, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: loseTargetDistance
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677602214866381467, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: factionType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       propertyPath: m_Name
       value: Soldier
@@ -149,12 +188,23 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9018597895270007362, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: targetFaction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018597895270007362, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: findTargetDistanceRange
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 683948087298580638}
+    - targetCorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6531485677171320828}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       insertIndex: 3
@@ -162,6 +212,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       insertIndex: 4
       addedObject: {fileID: 4427823763171133497}
+    - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: 11
+      addedObject: {fileID: 7782641292985600465}
   m_SourcePrefab: {fileID: 100100000, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
 --- !u!1 &4028787421511514510 stripped
 GameObject:
@@ -193,6 +246,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d72a417c11e3d94da2cf319eb3f4167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetupDefaultPositionAuthoring
+--- !u!114 &7782641292985600465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028787421511514510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9c2cfbf329701418a85799ed0df6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShootAttackAuthoring
+  timerMax: 0.2
+  shootAttackDistance: 16
+  shootSpawnPoint: {fileID: 6531485677171320828}
 --- !u!4 &6039823455947821284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}

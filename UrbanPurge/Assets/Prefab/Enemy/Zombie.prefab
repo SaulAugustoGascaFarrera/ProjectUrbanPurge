@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6307457179838072712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739667335658503337}
+  m_Layer: 7
+  m_Name: ShootVictimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &739667335658503337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307457179838072712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.185, y: 2.344, z: 0.258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7945220538233555871}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8830361097484278723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931400178743571239, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: loseTargetDistance
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358452096063256073, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 85cd5279f313d294c8d4eb59ece3cb5b, type: 2}
+    - target: {fileID: 4677602214866381467, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: factionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870571372788627146, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 945bee4ed8d09c440944162dc101ecd9, type: 2}
+    - target: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018597895270007362, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: targetFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018597895270007362, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: findTargetDistanceRange
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 739667335658503337}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 7748909651065060858}
+    - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: 10
+      addedObject: {fileID: 4159240140582694964}
+  m_SourcePrefab: {fileID: 100100000, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+--- !u!1 &755465941056905973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+  m_PrefabInstance: {fileID: 8830361097484278723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7748909651065060858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755465941056905973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2135ab5c7c0da4b80f6421797111c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieAuthoring
+--- !u!114 &4159240140582694964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755465941056905973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccf939c13f769a4f8704d79291249ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShootVictimAuthoring
+  hitTransform: {fileID: 739667335658503337}
+--- !u!4 &7945220538233555871 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+  m_PrefabInstance: {fileID: 8830361097484278723}
+  m_PrefabAsset: {fileID: 0}

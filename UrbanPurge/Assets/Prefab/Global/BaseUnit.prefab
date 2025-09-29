@@ -101,8 +101,15 @@ GameObject:
   - component: {fileID: 1451242130220006396}
   - component: {fileID: 1696678519438427714}
   - component: {fileID: 6040622174078643495}
+  - component: {fileID: 4677602214866381467}
+  - component: {fileID: 9013377479423266429}
+  - component: {fileID: 3297951219211004645}
+  - component: {fileID: 9018597895270007362}
+  - component: {fileID: 1931400178743571239}
+  - component: {fileID: -8927710906958783563}
   - component: {fileID: 5460848199982387679}
   - component: {fileID: 399196804943373892}
+  - component: {fileID: 1067302587881503141}
   m_Layer: 0
   m_Name: BaseUnit
   m_TagString: Untagged
@@ -164,6 +171,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af888685f6e71774ca87819608f83468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveOverrideAuthoring
+--- !u!114 &4677602214866381467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5512729c77ef74c8fb59b3b4b493d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FactionAuthoring
+  factionType: 0
+--- !u!114 &9013377479423266429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dc6b0d0fc4a8946976c6ca3a02ed80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthAuthoring
+  healthAmount: 100
+  healthAmountMax: 100
+--- !u!114 &3297951219211004645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635b8af69ec047043890ec8eeeb81b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetAuthoring
+  testTargetEntity: {fileID: 0}
+--- !u!114 &9018597895270007362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bc97385a7ba8f47826c09cd88c0c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTargetAuthoring
+  timerMax: 0.2
+  findTargetDistanceRange: 0
+  targetFaction: 0
+--- !u!114 &1931400178743571239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411b58813c32ffb48aab67593bbfc1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoseTargetAuthoring
+  loseTargetDistance: 0
+--- !u!114 &-8927710906958783563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501788cc6feb24f46992b77394255d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetOverrideAuthoring
 --- !u!136 &5460848199982387679
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -214,3 +301,15 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &1067302587881503141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138086884088805686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16549610bfe4458aa9389201d072bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Entities.Hybrid::Unity.Entities.Hybrid.Baking.LinkedEntityGroupAuthoring
