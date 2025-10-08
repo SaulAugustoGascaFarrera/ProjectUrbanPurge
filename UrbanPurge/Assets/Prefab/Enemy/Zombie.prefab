@@ -39,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 576275323720919187, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -78,6 +82,10 @@ PrefabInstance:
     - target: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696678519438427714, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      propertyPath: rotationtSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1931400178743571239, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       propertyPath: loseTargetDistance
@@ -124,6 +132,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
       insertIndex: 10
       addedObject: {fileID: 4159240140582694964}
+    - targetCorrespondingSourceObject: {fileID: 8138086884088805686, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
+      insertIndex: 12
+      addedObject: {fileID: 5786872155799631976}
   m_SourcePrefab: {fileID: 100100000, guid: de5d64e73874747438ee2fa483349aa2, type: 3}
 --- !u!1 &755465941056905973 stripped
 GameObject:
@@ -155,6 +166,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootVictimAuthoring
   hitTransform: {fileID: 739667335658503337}
+--- !u!114 &5786872155799631976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755465941056905973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb7fe1a31ed04045b124d1976713d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttackAuthoring
+  timerMax: 0.2
+  damageAmount: 1
+  colliderSize: 0.5
 --- !u!4 &7945220538233555871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1497633079684370524, guid: de5d64e73874747438ee2fa483349aa2, type: 3}

@@ -21,7 +21,7 @@ partial struct FindTargetSystem : ISystem
 
         NativeList<DistanceHit> distanceHitList = new NativeList<DistanceHit>(Allocator.Temp);
 
-        foreach((RefRW<Target> target,RefRW<FindTarget> findTarget,RefRW<LocalTransform> localTransform) in SystemAPI.Query<RefRW<Target>,RefRW<FindTarget>,RefRW<LocalTransform>>())
+        foreach((RefRW<Target> target,RefRW<FindTarget> findTarget,RefRW<LocalTransform> localTransform,RefRW<TargetOverride> targetOverride) in SystemAPI.Query<RefRW<Target>,RefRW<FindTarget>,RefRW<LocalTransform>, RefRW<TargetOverride>>())
         {
             findTarget.ValueRW.timer -= SystemAPI.Time.DeltaTime;
 
@@ -31,6 +31,14 @@ partial struct FindTargetSystem : ISystem
             }
 
             findTarget.ValueRW.timer = findTarget.ValueRO.timerMax;
+
+
+            if(SystemAPI.Exists(targetOverride.ValueRO.targetEntity))
+            {
+                target.ValueRW.targetEntity = targetOverride.ValueRO.targetEntity;
+                continue;
+            }
+
 
             distanceHitList.Clear();
 
