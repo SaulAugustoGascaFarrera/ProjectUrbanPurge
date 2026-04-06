@@ -10,7 +10,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.25",
+      "version": "1.8.27",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -27,11 +27,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
-      "version": "2.6.4",
+      "version": "2.6.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.8.25",
+        "com.unity.burst": "1.8.27",
         "com.unity.mathematics": "1.3.2",
         "com.unity.test-framework": "1.4.6",
         "com.unity.nuget.mono-cecil": "1.11.6",
@@ -40,12 +40,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.entities": {
-      "version": "1.4.4",
-      "depth": 0,
+      "version": "1.4.5",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.8.25",
-        "com.unity.collections": "2.6.4",
+        "com.unity.burst": "1.8.27",
+        "com.unity.collections": "2.6.5",
         "com.unity.mathematics": "1.3.2",
         "com.unity.modules.audio": "1.0.0",
         "com.unity.serialization": "3.1.3",
@@ -62,11 +62,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.entities.graphics": {
-      "version": "1.4.17",
+      "version": "1.4.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.entities": "1.4.4",
+        "com.unity.entities": "1.4.5",
         "com.unity.render-pipelines.core": "14.0.10",
         "com.unity.modules.particlesystem": "1.0.0"
       },
@@ -122,19 +122,19 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.physics": {
-      "version": "1.4.4",
+      "version": "1.4.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.8.25",
-        "com.unity.entities": "1.4.4",
-        "com.unity.collections": "2.6.4",
+        "com.unity.burst": "1.8.27",
+        "com.unity.entities": "1.4.5",
+        "com.unity.collections": "2.6.5",
         "com.unity.mathematics": "1.3.2",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.test-framework": "1.4.6",
@@ -144,7 +144,7 @@
     },
     "com.unity.profiling.core": {
       "version": "1.0.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -194,7 +194,7 @@
     },
     "com.unity.scriptablebuildpipeline": {
       "version": "2.4.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.4.5",
@@ -211,7 +211,7 @@
     },
     "com.unity.serialization": {
       "version": "3.1.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.7.2",
@@ -240,7 +240,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.2.0",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",
