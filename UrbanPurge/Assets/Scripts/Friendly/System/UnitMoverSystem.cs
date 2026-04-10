@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -50,5 +51,7 @@ public partial struct UnitMoverJob : IJobEntity
             physicsVelocity.Linear = 0.0f;
             physicsVelocity.Angular = 0.0f;
         }
+
+        //UnityEngine.Debug.Log(unitMover.targetPosition);
     }
 }
