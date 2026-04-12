@@ -9,10 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479717805924218665}
+  - component: {fileID: 561311913434334428}
   - component: {fileID: 8449158801835604327}
   - component: {fileID: 7983851651032078217}
   - component: {fileID: 4690544535850855842}
   - component: {fileID: 7843528380743765398}
+  - component: {fileID: 8056075118637478107}
+  - component: {fileID: 4895067847322015692}
+  - component: {fileID: 7359351380813153593}
+  - component: {fileID: 1191039865762784005}
   - component: {fileID: 5979719085765115290}
   - component: {fileID: 1978325536759133545}
   m_Layer: 7
@@ -39,6 +44,19 @@ Transform:
   - {fileID: 1602398477432830779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561311913434334428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ff21cad809868488f9aa2f4047cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FactionAuthoring
+  factionType: 1
 --- !u!114 &8449158801835604327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +111,60 @@ MonoBehaviour:
   showScale: 3
   OnSelected: 0
   OnDeselected: 0
+--- !u!114 &8056075118637478107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e199c90f062100647b14824220ff131a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetAuthoring
+  testTargetReference: {fileID: 0}
+--- !u!114 &4895067847322015692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1f303126dcd5c489337ef066068930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthAuthoring
+  healthAmount: 100
+  healthAmounMax: 100
+--- !u!114 &7359351380813153593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b53900b57702d04f979c106675783a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTargetAuthoring
+  timerMax: 0.2
+  findDistanceRange: 5
+  targetFaction: 2
+--- !u!114 &1191039865762784005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16549610bfe4458aa9389201d072bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Entities.Hybrid::Unity.Entities.Hybrid.Baking.LinkedEntityGroupAuthoring
 --- !u!54 &5979719085765115290
 Rigidbody:
   m_ObjectHideFlags: 0
