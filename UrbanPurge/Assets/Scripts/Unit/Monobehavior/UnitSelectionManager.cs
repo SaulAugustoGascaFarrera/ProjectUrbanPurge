@@ -28,7 +28,7 @@ public class UnitSelectionManager : MonoBehaviour
 
         }
 
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButtonUp(1))
         {
             UnitMovementImplementation();
         }

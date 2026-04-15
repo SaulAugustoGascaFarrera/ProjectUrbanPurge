@@ -30,11 +30,11 @@ partial struct FindTargetSystem : ISystem
 
             findTarget.ValueRW.timer = findTarget.ValueRO.timerMax;
 
-            if (!SystemAPI.Exists(target.ValueRO.targetEntity))
-            {
+            //if (!SystemAPI.Exists(target.ValueRO.targetEntity))
+            //{
 
-                continue;
-            }
+            //    continue;
+            //}
 
             distanceHitList.Clear();
 
@@ -55,9 +55,8 @@ partial struct FindTargetSystem : ISystem
                     if(targetFaction.factionType == findTarget.ValueRO.targetFaction)
                     {
 
-                        RefRW<Health> health = SystemAPI.GetComponentRW<Health>(distanceHit.Entity);
-
-                        health.ValueRW.healthAmount -= 5;
+                      
+                        target.ValueRW.targetEntity = distanceHit.Entity;
 
                         //UnityEngine.Debug.Log(distanceHit.Entity);
                     }
