@@ -118,24 +118,44 @@ public class UnitSelectionManager : MonoBehaviour
         //    End =ray.GetPoint(9999.0f),
         //};
 
-        EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected,UnitMover>().Build(entityManager);
+        bool isAttackingSingleTarget = false;
+
+        //EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected,UnitMover>().Build(entityManager);
+
+        EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected>().WithPresent<MoveOverride,TargetOverride>().Build(entityManager);
+
 
         NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
 
-        NativeArray<UnitMover> unitMoverArray = entityQuery.ToComponentDataArray<UnitMover>(Allocator.Temp);
+        NativeArray<MoveOverride> moveOverrideArray = entityQuery.ToComponentDataArray<MoveOverride>(Allocator.Temp);
+
+        NativeArray<TargetOverride> targetOverrideArray = entityQuery.ToComponentDataArray<TargetOverride>(Allocator.Temp);
+
 
         for(int i=0;i<entityArray.Length;i++)
         {
-            UnitMover unitMover = unitMoverArray[i];
+            MoveOverride moveOverride = moveOverrideArray[i];
 
-            unitMover.targetPosition = mousePosition;
+            moveOverride.targetPosition = mousePosition;
 
-            unitMoverArray[i] = unitMover;
+            moveOverrideArray[i] = moveOverride;
+
+            entityManager.SetComponentEnabled<MoveOverride>(entityArray[i],true);
 
 
+
+            TargetOverride targetOverride = targetOverrideArray[i];
+
+            targetOverride.targetEntity = Entity.Null;
+
+            targetOverrideArray[i] = targetOverride;
+
+           
         }
 
-        entityQuery.CopyFromComponentDataArray(unitMoverArray);
+        entityQuery.CopyFromComponentDataArray(moveOverrideArray);
+
+        entityQuery.CopyFromComponentDataArray(targetOverrideArray);
 
     }
 

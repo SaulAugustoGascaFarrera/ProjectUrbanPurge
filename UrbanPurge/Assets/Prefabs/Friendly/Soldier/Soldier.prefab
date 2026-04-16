@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 4895067847322015692}
   - component: {fileID: 7359351380813153593}
   - component: {fileID: 3082221429025128214}
+  - component: {fileID: 7440494895515642334}
+  - component: {fileID: 7033415603018895232}
   - component: {fileID: 1191039865762784005}
   - component: {fileID: 5979719085765115290}
   - component: {fileID: 1978325536759133545}
@@ -171,6 +173,30 @@ MonoBehaviour:
   damageAmount: 0
   attackDistance: 18
   bulletSpawnLocationPosition: {fileID: 2199860461296401189}
+--- !u!114 &7440494895515642334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd484d6a31df12428f37203d8950e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveOverrideAuthoring
+--- !u!114 &7033415603018895232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5609e3edf9065ba478babfa8181b5a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetOverrideAuthoring
 --- !u!114 &1191039865762784005
 MonoBehaviour:
   m_ObjectHideFlags: 0

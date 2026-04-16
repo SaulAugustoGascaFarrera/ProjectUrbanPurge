@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Unity.Burst;
 using Unity.Entities;
 
@@ -11,9 +12,21 @@ partial struct ResetEventsSystem : ISystem
     public void OnUpdate(ref SystemState state)
     {
         new ResetSelectedEventsJob().ScheduleParallel();
+
+        new ResetHealthEventsJob().ScheduleParallel();
     }
 
    
+}
+
+
+[BurstCompile]
+public partial struct ResetHealthEventsJob : IJobEntity
+{
+    public void Execute(ref Health health)
+    {
+        health.onHealthChanged = false;
+    }
 }
 
 [BurstCompile]
