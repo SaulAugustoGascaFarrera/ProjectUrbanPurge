@@ -8,20 +8,40 @@ using UnityEngine;
 public class UnitSelectionManager : MonoBehaviour
 {
 
+
+    public static UnitSelectionManager Instance { get; private set; }
+
     public event EventHandler OnSelectionStart;
     public event EventHandler OnSelectionEnd;
 
+    public Vector2 selectionStartMousePosition;
 
-   
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(Instance);
+            return;
+        }
+
+        Instance = this;
+    }
+
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
+            selectionStartMousePosition = Input.mousePosition;
+
             OnSelectionStart?.Invoke(this, EventArgs.Empty);
         }
 
         if(Input.GetMouseButtonUp(0))
         {
+            
+
             OnSelectionEnd?.Invoke(this,EventArgs.Empty);
 
             UnitSelectionImplementation();
@@ -41,7 +61,7 @@ public class UnitSelectionManager : MonoBehaviour
     {
         EntityManager entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
-        EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected, Unit>().Build(entityManager);
+        EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected>().Build(entityManager);
 
         NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
 
@@ -58,36 +78,78 @@ public class UnitSelectionManager : MonoBehaviour
             entityManager.SetComponentData(entityArray[i], selected);
         }
 
-        entityQuery = entityManager.CreateEntityQuery(typeof(PhysicsWorldSingleton));
+        entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<LocalTransform,Unit>().WithPresent<Selected>().Build(entityManager);
 
-        PhysicsWorldSingleton physicsWorldSingleton = entityQuery.GetSingleton<PhysicsWorldSingleton>();
+        Rect selectionAreaRect = GetSelectionAreaRect();
+        float selectionAreaSize = selectionAreaRect.width + selectionAreaRect.height;
+        float multipleSelectionMinSize = 40.0f;
+        bool isMultipleSelection = selectionAreaSize > multipleSelectionMinSize;
 
-        CollisionWorld collisionWorld = physicsWorldSingleton.CollisionWorld;
 
-        UnityEngine.Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastInput raycastInput = new RaycastInput
+        if(isMultipleSelection)
         {
-            Start = cameraRay.GetPoint(0.0f),
-            Filter = new CollisionFilter
+            entityArray = entityQuery.ToEntityArray(Allocator.Temp);
+
+            NativeArray<LocalTransform> localTransformArray = entityQuery.ToComponentDataArray<LocalTransform>(Allocator.Temp);
+
+            for(int i=0;i<entityArray.Length;i++)
             {
-                BelongsTo = ~0u,
-                CollidesWith = 1u << GameAssets.UNIT_LAYER,
-                GroupIndex = 0,
-            },
-            End = cameraRay.GetPoint(9999.0f),
-        };
+                LocalTransform unitLocalTransform = localTransformArray[i];
 
-        if (collisionWorld.CastRay(raycastInput, out Unity.Physics.RaycastHit raycastHit))
-        {
-            entityManager.SetComponentEnabled<Selected>(raycastHit.Entity, true);
+                Vector2 unitScreenPosition = Camera.main.WorldToScreenPoint(unitLocalTransform.Position);
 
-            Selected selected = entityManager.GetComponentData<Selected>(raycastHit.Entity);
-            selected.OnSelected = true;
-            selected.OnDeselected = false;
+                if(selectionAreaRect.Contains(unitScreenPosition))
+                {
+                    entityManager.SetComponentEnabled<Selected>(entityArray[i], true);
 
-            entityManager.SetComponentData(raycastHit.Entity, selected);
+                    Selected selected = entityManager.GetComponentData<Selected>(entityArray[i]);
+                    selected.OnSelected = true;
+                    selected.OnDeselected = false;
+
+                   entityManager.SetComponentData(entityArray[i], selected);
+
+                   
+                }
+
+                
+            }
+
         }
+        else
+        {
+            entityQuery = entityManager.CreateEntityQuery(typeof(PhysicsWorldSingleton));
+
+            PhysicsWorldSingleton physicsWorldSingleton = entityQuery.GetSingleton<PhysicsWorldSingleton>();
+
+            CollisionWorld collisionWorld = physicsWorldSingleton.CollisionWorld;
+
+            UnityEngine.Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastInput raycastInput = new RaycastInput
+            {
+                Start = cameraRay.GetPoint(0.0f),
+                Filter = new CollisionFilter
+                {
+                    BelongsTo = ~0u,
+                    CollidesWith = 1u << GameAssets.UNIT_LAYER,
+                    GroupIndex = 0,
+                },
+                End = cameraRay.GetPoint(9999.0f),
+            };
+
+            if (collisionWorld.CastRay(raycastInput, out Unity.Physics.RaycastHit raycastHit))
+            {
+                entityManager.SetComponentEnabled<Selected>(raycastHit.Entity, true);
+
+                Selected selected = entityManager.GetComponentData<Selected>(raycastHit.Entity);
+                selected.OnSelected = true;
+                selected.OnDeselected = false;
+
+                entityManager.SetComponentData(raycastHit.Entity, selected);
+            }
+        }
+
+       
 
     }
 
@@ -159,5 +221,21 @@ public class UnitSelectionManager : MonoBehaviour
 
     }
 
-    
+
+    public Rect GetSelectionAreaRect()
+    {
+        Vector2 selectionEndMousePosition = Input.mousePosition;
+
+        Vector2 lowerLeftCorner = new Vector2(Mathf.Min(selectionStartMousePosition.x,selectionEndMousePosition.x),
+            Mathf.Min(selectionStartMousePosition.y,selectionEndMousePosition.y));
+
+        Vector2 upperRightCorner = new Vector2(
+           Mathf.Max(selectionStartMousePosition.x, selectionEndMousePosition.x),
+           Mathf.Max(selectionStartMousePosition.y, selectionEndMousePosition.y)
+       );
+
+        return new Rect(lowerLeftCorner.x,lowerLeftCorner.y,upperRightCorner.x - lowerLeftCorner.x,upperRightCorner.y - lowerLeftCorner.y);
+    }
+
+
 }
