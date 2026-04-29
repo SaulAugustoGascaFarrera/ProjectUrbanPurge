@@ -54,6 +54,15 @@ partial struct ShootAttackSystem : ISystem
 
             shootAttack.ValueRW.timer = shootAttack.ValueRO.timerMax;
 
+            //if(SystemAPI.HasComponent<TargetOverride>(target.ValueRO.targetEntity))
+            //{
+            //    RefRW<TargetOverride> enemyTargetEntity = SystemAPI.GetComponentRW<TargetOverride>(target.ValueRO.targetEntity);
+            //    if(enemyTargetEntity.ValueRO.targetEntity == Entity.Null)
+            //    {
+            //        enemyTargetEntity.ValueRW.targetEntity = entity;
+            //    }
+            //}
+
 
             Entity bulletEntity = state.EntityManager.Instantiate(entitiesReferences.bulletEntity);
             float3 bulletSpawnWorldPosition = localTransform.ValueRW.TransformPoint(shootAttack.ValueRO.bulletSpawnLocationPosition);
