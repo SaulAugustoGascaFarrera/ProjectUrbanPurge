@@ -444,6 +444,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntitiesReferencesAuthoring
   bulletGameObject: {fileID: 3322118807955448881, guid: 5f0ed23c819f1fb468d66c29007bc14d, type: 3}
   zombieGameObject: {fileID: 4475140590343426590, guid: 4fd52140ca7be8c49967af3cf402e954, type: 3}
+--- !u!1 &1724016954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724016956}
+  - component: {fileID: 1724016955}
+  m_Layer: 0
+  m_Name: AnimationDataHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1724016955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724016954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85041ea46fbb3a41998d41963d711a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationDataHolderAuthoring
+  animationDataListSO: {fileID: 11400000, guid: b31206f98d1767441b3c16ec8067460f, type: 2}
+--- !u!4 &1724016956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724016954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1976383705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 479717805924218665, guid: e519941a4a8694a4ab19065289ff025f, type: 3}
@@ -603,13 +648,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2811723408695135516, guid: e519941a4a8694a4ab19065289ff025f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4067703610617321770}
   m_SourcePrefab: {fileID: 100100000, guid: e519941a4a8694a4ab19065289ff025f, type: 3}
+--- !u!1 &4067703610617321769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2811723408695135516, guid: e519941a4a8694a4ab19065289ff025f, type: 3}
+  m_PrefabInstance: {fileID: 4067703610617321768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4067703610617321770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4067703610617321769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31a17de7331a6d4a80099a767fa354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveAnimationAuthoring
+  nextAnimationType: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1376864665}
+  - {fileID: 1724016956}
   - {fileID: 852895690}
   - {fileID: 2075428910}
   - {fileID: 471302104}
