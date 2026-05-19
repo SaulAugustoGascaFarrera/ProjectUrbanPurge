@@ -68,6 +68,12 @@ partial struct FindTargetSystem : ISystem
             {
                 foreach(DistanceHit distanceHit in distanceHitList)
                 {
+
+                    if (!SystemAPI.HasComponent<Faction>(distanceHit.Entity))
+                    {
+                        continue;  // Saltar esta entidad
+                    }
+
                     Faction targetFaction = SystemAPI.GetComponent<Faction>(distanceHit.Entity);
 
                     if(targetFaction.factionType == findTarget.ValueRO.targetFaction)

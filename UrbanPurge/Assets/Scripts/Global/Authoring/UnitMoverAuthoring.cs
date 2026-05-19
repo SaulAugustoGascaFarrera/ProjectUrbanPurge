@@ -34,6 +34,8 @@ public struct UnitMover : IComponentData
 
     public float movementSpeed;
     public float rotationSpeed;
+
+    public bool isMoving;
 }
 
 

@@ -45,11 +45,15 @@ public partial struct UnitMoverJob : IJobEntity
             physicsVelocity.Linear = movementDirection * unitMover.movementSpeed;
 
             physicsVelocity.Angular = 0.0f;
+
+            unitMover.isMoving = true;
         }
         else
         {
             physicsVelocity.Linear = 0.0f;
             physicsVelocity.Angular = 0.0f;
+
+            unitMover.isMoving = false;
         }
 
         //UnityEngine.Debug.Log(unitMover.targetPosition);

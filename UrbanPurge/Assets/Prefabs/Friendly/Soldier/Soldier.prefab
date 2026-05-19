@@ -101,6 +101,8 @@ GameObject:
   - component: {fileID: 7440494895515642334}
   - component: {fileID: 7033415603018895232}
   - component: {fileID: 7614930694102092524}
+  - component: {fileID: 5899033220174982926}
+  - component: {fileID: 144706815348762294}
   - component: {fileID: 1191039865762784005}
   - component: {fileID: 5979719085765115290}
   - component: {fileID: 1978325536759133545}
@@ -292,6 +294,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseTargetAuthoring
   loseTargetDistance: 41
+--- !u!114 &5899033220174982926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6d212f8343dcc4bb68cbd401e80c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedMeshAuthoring
+  meshGameObject: {fileID: 2811723408695135516}
+--- !u!114 &144706815348762294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995241627174786795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e290c04abdf0b14499db5e58e9da152b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationsAuthoring
+  idleAnimationType: 1
+  walkAnimationType: 2
+  shootAnimationType: 5
+  aimAnimationType: 6
 --- !u!114 &1191039865762784005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +427,7 @@ GameObject:
   - component: {fileID: 4414708052033465513}
   - component: {fileID: 4824898733291375354}
   - component: {fileID: 4558996959061904241}
+  - component: {fileID: 4043808939473076479}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -474,6 +506,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2811723408695135516}
   m_Mesh: {fileID: 4300000, guid: e274e405c96af1740a3f6351f10189f9, type: 2}
+--- !u!114 &4043808939473076479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811723408695135516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31a17de7331a6d4a80099a767fa354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveAnimationAuthoring
+  nextAnimationType: 0
 --- !u!1 &3516916735493396923
 GameObject:
   m_ObjectHideFlags: 0

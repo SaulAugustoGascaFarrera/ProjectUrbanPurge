@@ -27,15 +27,15 @@ partial struct ActiveAnimationSystem : ISystem
             //    activeAnimation.ValueRW.animationDataBlobAssetReference = animationDataHolder.soldierIdleBlobAsset;
             //}
 
-            if(Input.GetKeyDown(KeyCode.T))
-            {
-                activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierIdle;
-            }
+            //if(Input.GetKeyDown(KeyCode.T))
+            //{
+            //    activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierIdle;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierWalk;
-            }
+            //if (Input.GetKeyDown(KeyCode.Y))
+            //{
+            //    activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierWalk;
+            //}
 
 
             ref AnimationData animationData = ref animationDataHolder.animationDataBlobArrayBlobAsset.Value[(int)activeAnimation.ValueRO.activeAnimationType];
@@ -49,6 +49,20 @@ partial struct ActiveAnimationSystem : ISystem
                 activeAnimation.ValueRW.frame = (activeAnimation.ValueRO.frame + 1) % animationData.frameMax;
 
                 materialMeshInfo.ValueRW.MeshID = animationData.batchMeshIdArray[activeAnimation.ValueRO.frame];
+
+
+                if(activeAnimation.ValueRO.frame == 0 && 
+                    activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.SoldierShoot)
+                {
+                    activeAnimation.ValueRW.activeAnimationType = AnimationDataSO.AnimationType.None;
+                }
+
+
+                if (activeAnimation.ValueRO.frame == 0 &&
+                    activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.ZombieAttack)
+                {
+                    activeAnimation.ValueRW.activeAnimationType = AnimationDataSO.AnimationType.None;
+                }
             }
 
         }

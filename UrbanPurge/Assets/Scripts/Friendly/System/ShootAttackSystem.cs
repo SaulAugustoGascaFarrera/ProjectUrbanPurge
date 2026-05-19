@@ -54,6 +54,8 @@ partial struct ShootAttackSystem : ISystem
 
             shootAttack.ValueRW.timer = shootAttack.ValueRO.timerMax;
 
+            shootAttack.ValueRW.onShoot.isTriggered = true;
+
             //if(SystemAPI.HasComponent<TargetOverride>(target.ValueRO.targetEntity))
             //{
             //    RefRW<TargetOverride> enemyTargetEntity = SystemAPI.GetComponentRW<TargetOverride>(target.ValueRO.targetEntity);

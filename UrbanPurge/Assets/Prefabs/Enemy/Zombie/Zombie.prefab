@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2833835732626293363}
   - component: {fileID: 5823881924187030999}
   - component: {fileID: 4747598006290904366}
+  - component: {fileID: 8740047951816432312}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -89,6 +90,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8740047951816432312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313956461736498321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31a17de7331a6d4a80099a767fa354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveAnimationAuthoring
+  nextAnimationType: 0
 --- !u!1 &3366710735121226208
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,9 +165,12 @@ GameObject:
   - component: {fileID: 4934239552768622792}
   - component: {fileID: 6867219831738105368}
   - component: {fileID: 4478879329557867945}
+  - component: {fileID: 9040997873099305850}
   - component: {fileID: 774154042803374464}
   - component: {fileID: 5672764957951888813}
   - component: {fileID: 277632507119115273}
+  - component: {fileID: 5525006589080925749}
+  - component: {fileID: 409960246622873105}
   - component: {fileID: 194705518322014653}
   - component: {fileID: 1978330203519759349}
   - component: {fileID: 887220974978010061}
@@ -249,7 +266,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FindTargetAuthoring
   timerMax: 0.2
   findDistanceRange: 5
-  targetFaction: 0
+  targetFaction: 1
+--- !u!114 &9040997873099305850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475140590343426590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d9d853ef16c3e4086a6844abb3efc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttackAuthoring
+  timerMax: 0.2
+  damageAmount: 3
+  colliderSize: 5
 --- !u!114 &774154042803374464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +331,36 @@ MonoBehaviour:
   distanceMin: 3
   distanceMax: 10
   randomSeed: 1
+--- !u!114 &5525006589080925749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475140590343426590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6d212f8343dcc4bb68cbd401e80c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedMeshAuthoring
+  meshGameObject: {fileID: 1313956461736498321}
+--- !u!114 &409960246622873105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475140590343426590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e290c04abdf0b14499db5e58e9da152b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationsAuthoring
+  idleAnimationType: 3
+  walkAnimationType: 4
+  shootAnimationType: 0
+  aimAnimationType: 0
+  meeleAttackAnimationType: 7
 --- !u!114 &194705518322014653
 MonoBehaviour:
   m_ObjectHideFlags: 0
